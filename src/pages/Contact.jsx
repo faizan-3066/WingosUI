@@ -1,0 +1,7 @@
+import { Mail, MapPin, Phone } from 'lucide-react'
+import PageIntro from '../component/PageIntro'
+import { contactUrl } from '../utils/whatsapp'
+
+export default function Contact() {
+  return <><PageIntro eyebrow="WE ARE HERE FOR YOU" title="Let’s talk food.">Questions, cravings or a table full of friends? Reach us directly and we will take it from there.</PageIntro><section className="content-section contact-layout"><div className="contact-details"><div className="contact-row"><MapPin /><div><span>Visit us</span><strong>Gujranwala, Pakistan</strong></div></div><div className="contact-row"><Phone /><div><span>Call us</span><strong>+92 300 1234567</strong></div></div><div className="contact-row"><Mail /><div><span>Email us</span><strong>hello@bitehouse.com</strong></div></div><div className="hours-block"><h3>Opening Hours</h3><p>Mon - Fri <strong>11:00 AM - 11:00 PM</strong></p><p>Sat - Sun <strong>12:00 PM - 12:00 AM</strong></p></div><a className="button" href={contactUrl()} target="_blank" rel="noreferrer">Chat on WhatsApp</a></div><iframe className="contact-map" title="Bite House location in Gujranwala" src="https://www.google.com/maps?q=Gujranwala%2C%20Pakistan&output=embed" loading="lazy" /></section></>
+}

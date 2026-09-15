@@ -1,47 +1,44 @@
-import React from 'react'
+import { openWhatsApp } from '../utils/whatsapp'
+import OptimizedImage from './OptimizedImage'
+import Reveal from './Reveal'
 
 export default function Discount() {
   return (
-    <div className="bg-[#040303] p-3 w-full flex items-center justify-between">
+    <Reveal as="section" className="discount-section">
 
   {/* Left Content */}
-  <div className="w-[50%] pl-3">
+  <div>
 
-    <p className="text-[#FFCF62] text-xs font-sans tracking-widest">
+    <p className="eyebrow">
       SPECIAL OFFER
     </p>
 
-    <p className="text-2xl font-serif text-white mt-1">
+    <p className="discount-title">
       Get <span className="text-[#FFCF62]">20% off</span>
     </p>
 
-    <p className="text-gray-400 text-xs mt-1 max-w-md">
+    <p className="discount-copy">
       On your first order. Because good food should always be a little extra.
     </p>
 
-    <button className="mt-2 bg-[#FFCF62] text-[#040303] px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-[#E9B255] transition duration-300">
+    <button className="button button--small" onClick={() => openWhatsApp('20% Off Your First Bite')}>
       Order Now
     </button>
 
   </div>
 
   {/* Right Image */}
-  <div className="w-[50%] flex justify-end">
-    <img
-      src="/image/hero.png"
+  <div className="discount-art">
+    <OptimizedImage
+      src="/image/hero-1024.jpg"
       alt="Premium Fast Food"
-      className="
-        w-[75%]
-        max-w-[400px]
-        object-contain
-        drop-shadow-[0_0_25px_rgba(233,178,85,0.25)]
-        hover:scale-105
-        transition
-        duration-500
-      "
+      width={1024}
+      height={683}
+      sizes="(max-width: 650px) 40vw, 36vw"
+      className="discount-image"
     />
   </div>
 
-</div>
+  </Reveal>
   )
 }
